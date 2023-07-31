@@ -24,19 +24,20 @@ import ru.kolpakovee.arcanegaming.data.FileType
 fun ContentCard(
     content: Content,
     modifier: Modifier = Modifier,
-    onDirectoryClicked: (Content) -> Unit
+    onDirectoryClicked: (Content) -> Unit,
+    onFileClicked: (Content) -> Unit
 ) {
     Card(
         modifier
             .fillMaxWidth()
             .clickable {
                 if (content.type == FileType.DIRECTORY) onDirectoryClicked(content)
+                else content.downloadUrl?.let { onFileClicked(content) }
             },
         colors = CardDefaults.cardColors(containerColor = Color.White),
         shape = RoundedCornerShape(0.dp)
     ) {
         Row(modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Start) {
-
             Image(
                 bitmap = ImageBitmap.imageResource(id = if (content.type == FileType.FILE) R.drawable.file else R.drawable.folder),
                 contentDescription = if (content.type == FileType.FILE) "file" else "dir",

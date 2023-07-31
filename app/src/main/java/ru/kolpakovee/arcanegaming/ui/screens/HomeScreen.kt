@@ -22,6 +22,7 @@ fun HomeScreen(
     onTextChanged: (String) -> Unit,
     onRepositoryClicked: (Repository) -> Unit,
     onDirectoryClicked: (Content) -> Unit,
+    onFileClicked: (Content) -> Unit,
     text: String,
 ) {
     when (gitUIState) {
@@ -45,7 +46,8 @@ fun HomeScreen(
         is GitUIState.GitContent -> ContentScreen(
             items = gitUIState.contents,
             modifier = modifier,
-            onDirectoryClicked = onDirectoryClicked
+            onDirectoryClicked = onDirectoryClicked,
+            onFileClicked = onFileClicked
         )
     }
 }

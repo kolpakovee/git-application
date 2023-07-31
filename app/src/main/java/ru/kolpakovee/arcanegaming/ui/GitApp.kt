@@ -1,16 +1,23 @@
 package ru.kolpakovee.arcanegaming.ui
 
+import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ru.kolpakovee.arcanegaming.data.Content
 import ru.kolpakovee.arcanegaming.data.User
+import ru.kolpakovee.arcanegaming.ui.components.WebViewComponent
 import ru.kolpakovee.arcanegaming.ui.screens.HomeScreen
 
 @Composable
-fun GitApp(modifier: Modifier = Modifier, onUserClicked: (User) -> Unit) {
+fun GitApp(
+    modifier: Modifier = Modifier,
+    onUserClicked: (User) -> Unit,
+    onFileClicked: (Content) -> Unit
+) {
     val gitViewModel: GitViewModel =
         viewModel(factory = GitViewModel.Factory)
 
@@ -45,6 +52,8 @@ fun GitApp(modifier: Modifier = Modifier, onUserClicked: (User) -> Unit) {
                     }
                 }
             }
-        }
+        },
+
+        onFileClicked = onFileClicked
     )
 }

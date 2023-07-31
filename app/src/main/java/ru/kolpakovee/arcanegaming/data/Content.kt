@@ -5,7 +5,8 @@ data class Content(
     val path: String?,
     val type: FileType,
     val owner: String?,
-    val repositoryName: String?
+    val repositoryName: String?,
+    val downloadUrl: String?
 )
 
 enum class FileType {

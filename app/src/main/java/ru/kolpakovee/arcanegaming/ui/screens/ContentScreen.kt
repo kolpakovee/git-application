@@ -12,13 +12,16 @@ import ru.kolpakovee.arcanegaming.ui.components.ContentCard
 fun ContentScreen(
     items: List<Content>,
     modifier: Modifier,
-    onDirectoryClicked: (Content) -> Unit
+    onDirectoryClicked: (Content) -> Unit,
+    onFileClicked: (Content) -> Unit
+
 ) {
     LazyColumn(modifier = modifier.fillMaxWidth()) {
         items(items) { item ->
             ContentCard(
                 content = item,
-                onDirectoryClicked = onDirectoryClicked
+                onDirectoryClicked = onDirectoryClicked,
+                onFileClicked = onFileClicked
             )
         }
     }

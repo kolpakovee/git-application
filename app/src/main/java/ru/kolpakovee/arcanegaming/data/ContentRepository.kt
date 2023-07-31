@@ -22,7 +22,8 @@ class NetworkContentRepository(
                 owner = owner,
                 path = item.path,
                 repositoryName = repo,
-                type = if (item.type == "file") FileType.FILE else FileType.DIRECTORY
+                type = if (item.type == "file") FileType.FILE else FileType.DIRECTORY,
+                downloadUrl = item.downloadUrl
             )
         }
     }
