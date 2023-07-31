@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">arcaneGaming</string>
+    <string name="loading">Loading…</string>
+    <string name="load_failed">Failed loading</string>
+    <string name="retry">Try again</string>
+    <string name="search">Search</string>
+    <string name="input_field">Введите запрос</string>
+    <string name="text_field_label">Введите запрос</string>
+    <string name="default_request">arcane</string>
+</resources>
